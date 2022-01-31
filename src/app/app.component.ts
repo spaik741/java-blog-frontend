@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {TokenStorageService} from "./service/token-storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'java-blog-frontend';
+
+  constructor(private router: Router,
+              private tokenStorageService: TokenStorageService) {
+  }
+
+  logout() {
+    this.tokenStorageService.logOut();
+  }
 }

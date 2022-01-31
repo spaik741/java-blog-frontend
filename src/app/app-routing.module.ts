@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AuthComponent} from "./auth/auth.component";
 
 const routes: Routes = [
-  // {path: '', component: BooksComponent}
+  {path: 'auth', component: AuthComponent}
 ];
 
 @NgModule({
