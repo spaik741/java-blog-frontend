@@ -7,11 +7,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthComponent} from "./auth/auth.component";
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
