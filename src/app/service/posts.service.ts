@@ -19,6 +19,7 @@ export class PostsService {
   }
 
   getPost(id: any): Observable<Post> {
+    console.log('Get post Request ', id)
     return this.http.get<Post>(POST_API + '/' + id);
   }
 

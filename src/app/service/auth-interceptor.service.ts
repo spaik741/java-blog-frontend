@@ -8,8 +8,6 @@ import {
   HttpRequest
 } from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Book} from "../models/Book";
-import {Author} from "../models/Author";
 import {TokenStorageService} from "./token-storage.service";
 
 const TOKEN_HEADER = 'Authorization';

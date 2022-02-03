@@ -8,12 +8,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthComponent} from "./auth/auth.component";
 import { PostsComponent } from './posts/posts.component';
+import { PostViewComponent } from './post-view/post-view.component';
+import {authInterceptorProviders} from "./service/auth-interceptor.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    PostsComponent
+    PostsComponent,
+    PostViewComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { PostsComponent } from './posts/posts.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
