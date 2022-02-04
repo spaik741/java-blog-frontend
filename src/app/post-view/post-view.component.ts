@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PostsService} from "../service/posts.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Post} from "../models/Post";
@@ -16,9 +16,12 @@ export class PostViewComponent implements OnInit {
 
   comments: Comment[]
 
+  message: string
+
   constructor(private postService: PostsService,
               private commentService: CommentService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
 
@@ -38,7 +41,7 @@ export class PostViewComponent implements OnInit {
       }
     );
     this.route.params.subscribe((params: Params) => {
-      if (params.id) {
+        if (params.id) {
           // @ts-ignore
           this.commentService.getAllComment(params.id).subscribe(c => this.comments = c);
         }
@@ -46,4 +49,9 @@ export class PostViewComponent implements OnInit {
     );
   }
 
+  addComment() {
+    if (this.message) {
+      this.commentService.addComment(this.message, this.post.id).subscribe();
+    }
+  }
 }

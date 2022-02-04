@@ -13,5 +13,14 @@
       <p>{{c.message}}</p>
     </blockquote>
   </div>
-  <p></p>
+</div>
+<p></p><p></p>
+
+<div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" [(ngModel)]="message"></textarea>
+  <label for="floatingTextarea2">Комментарий...</label>
+</div>
+<p></p>
+<div class="col-auto">
+  <button type="button" class="btn btn-primary mb-3" (click)="addComment()">Добавить комментарий</button>
 </div>
