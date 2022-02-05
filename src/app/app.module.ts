@@ -10,13 +10,15 @@ import {AuthComponent} from "./auth/auth.component";
 import { PostsComponent } from './posts/posts.component';
 import { PostViewComponent } from './post-view/post-view.component';
 import {authInterceptorProviders} from "./service/auth-interceptor.service";
+import { PostFormComponent } from './post-form/post-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     PostsComponent,
-    PostViewComponent
+    PostViewComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,
