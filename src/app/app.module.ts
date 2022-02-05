@@ -11,6 +11,8 @@ import { PostsComponent } from './posts/posts.component';
 import { PostViewComponent } from './post-view/post-view.component';
 import {authInterceptorProviders} from "./service/auth-interceptor.service";
 import { PostFormComponent } from './post-form/post-form.component';
+import { UserViewComponent } from './user-view/user-view.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PostFormComponent } from './post-form/post-form.component';
     AuthComponent,
     PostsComponent,
     PostViewComponent,
-    PostFormComponent
+    PostFormComponent,
+    UserViewComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

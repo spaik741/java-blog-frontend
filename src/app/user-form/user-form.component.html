@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+
+
+
+<body class="text-center">
+
+<main class="form-signin">
+
+  <img class="mb-4" src="https://bybdigital.com/wp-content/uploads/2021/01/4-2-blogging-picture.png" alt="" width="72" height="57">
+  <h1 class="h3 mb-3 fw-normal">Пожалуйста введите логин и пароль</h1>
+
+  <div class="form-floating">
+    <input type="text" class="form-control" id="username" [(ngModel)]="username">
+    <label for="username">Имя</label>
+  </div>
+  <p>
+  <div class="form-floating">
+    <input type="email" class="form-control" id="emailUser" [(ngModel)]="email">
+    <label for="emailUser">Почтовый ящик</label>
+  </div>
+  <p>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="passwordUser1" [(ngModel)]="password1">
+    <label for="passwordUser1">Пароль</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="passwordUser2" [(ngModel)]="password2">
+    <label for="passwordUser2">Повторите пароль</label>
+  </div>
+  <p><p>
+  <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="registration()">Зарегестрироваться</button>
+  <p class="mt-5 mb-3 text-muted">© 2022</p>
+
+  <h5 *ngIf='isSuccess()' class="h5" style="color: green">Успешная регистрация!</h5>
+</main>
+
+<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js?v=513" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
