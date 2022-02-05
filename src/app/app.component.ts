@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {TokenStorageService} from "./service/token-storage.service";
 import {Router} from "@angular/router";
 import {UserService} from "./service/user.service";
+import {User} from "./models/User";
 
 @Component({
   selector: 'app-root',
@@ -18,5 +19,10 @@ export class AppComponent {
 
   logout() {
     this.tokenStorageService.logOut();
+  }
+
+  user: User;
+  regIfUser() :boolean{
+    return !!this.tokenStorageService.getToken();
   }
 }
