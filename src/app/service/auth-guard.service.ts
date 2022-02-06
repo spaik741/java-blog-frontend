@@ -1,8 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Book} from "../models/Book";
-import {Author} from "../models/Author";
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from "@angular/router";
 import {TokenStorageService} from "./token-storage.service";
 

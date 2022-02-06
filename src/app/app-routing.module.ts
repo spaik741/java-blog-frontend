@@ -13,7 +13,8 @@ const routes: Routes = [
   {path: 'view/:id', component: PostViewComponent},
   {path: 'edit', component: PostFormComponent},
   {path: 'viewUser', component: UserViewComponent},
-  {path: 'registration', component: UserFormComponent}
+  {path: 'registration', component: UserFormComponent},
+  {path: 'search/:word', component: PostsComponent},
 ];
 
 @NgModule({

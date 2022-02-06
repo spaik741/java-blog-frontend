@@ -27,6 +27,7 @@ export class PostViewComponent implements OnInit {
 
     this.route.params.subscribe((params: Params) => {
         if (params.id) {
+          console.log(params.id)
           this.postService.getPost(params.id).subscribe(p => {
             console.log('Post:', this.post)
             this.post = {

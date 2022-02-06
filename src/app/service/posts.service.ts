@@ -18,6 +18,10 @@ export class PostsService {
     return this.http.get<Post>(POST_API);
   }
 
+  getAllPostsWithSearch(word: string): Observable<Post> {
+    return this.http.get<Post>(POST_API + '/search/' + word);
+  }
+
   getPost(id: any): Observable<Post> {
     console.log('Get post Request ', id)
     return this.http.get<Post>(POST_API + '/' + id);

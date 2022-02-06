@@ -11,6 +11,7 @@ import {User} from "./models/User";
 })
 export class AppComponent {
   title = 'java-blog-frontend';
+  word: string;
 
   constructor(private router: Router,
               private tokenStorageService: TokenStorageService,
@@ -21,7 +22,6 @@ export class AppComponent {
     this.tokenStorageService.logOut();
   }
 
-  user: User;
   regIfUser() :boolean{
     return !!this.tokenStorageService.getToken();
   }

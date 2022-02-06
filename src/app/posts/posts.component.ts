@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PostsService} from "../service/posts.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Post} from "../models/Post";
 
 @Component({
@@ -12,10 +12,18 @@ export class PostsComponent implements OnInit {
 
   posts: Post[]
 
-  constructor(private postsService: PostsService, private router: Router) { }
+  constructor(private postsService: PostsService,  private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getAllPosts();
+    let wordSearch: string;
+    this.activatedRoute.params.subscribe((params: Params) => wordSearch = params.word);
+    // @ts-ignore
+    if (wordSearch) {
+        console.log('Word', wordSearch);
+        this.getAllPostsWithSearch(wordSearch);
+    } else {
+      this.getAllPosts();
+    }
   }
 
   getAllPosts(): void {
@@ -23,10 +31,11 @@ export class PostsComponent implements OnInit {
     this.postsService.getAllPosts().subscribe(posts => this.posts = posts);
   }
 
-  viewPost(id: any) {
-    this.router.navigate( ['view'], {
-      queryParams: {id: id}
-    });
+  getAllPostsWithSearch(word: string): void {
+    // @ts-ignore
+    this.postsService.getAllPostsWithSearch(word).subscribe(posts => this.posts = posts);
   }
+
+
 
 }
