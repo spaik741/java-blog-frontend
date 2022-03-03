@@ -1,0 +1,12 @@
+<div class="mb-3">
+  <label for="title" class="form-label">Название поста</label>
+  <input type="text" class="form-control" id="title" placeholder="Ввести название..."  [(ngModel)]="title">
+</div>
+<div class="mb-3">
+  <label for="text" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="text" rows="8" [(ngModel)]="text"></textarea>
+</div>
+
+<div  *ngIf="title && text" class="col-auto">
+  <button type="button" class="btn btn-primary mb-3" (click)="addPost()">Добавить пост</button>
+</div>
